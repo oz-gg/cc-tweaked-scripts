@@ -5,7 +5,7 @@ result = scanner.scan(10)
 
 function findInTable(v, table)
 	for i, x in ipairs(table) do
-		if x == v then return true end
+		if string.find(x, v, 1, true) then return true end
 	end
 	return false
 end
