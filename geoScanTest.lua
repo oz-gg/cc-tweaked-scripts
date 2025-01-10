@@ -1,4 +1,4 @@
-scanner = peripheral.find("geoScanner")
+FILTER_TAG = "forge:ores"
 
 function stringInTable(v, t)
 	for i, x in ipairs(t) do
@@ -8,6 +8,7 @@ function stringInTable(v, t)
 end
 
 function analyze(tag)
+	term.clear()
 	result, err = scanner.analyzeChunk()
 	if result ~= nil then
 		ores = {}
@@ -26,19 +27,22 @@ function analyze(tag)
 	read()
 end
 
+scanner = peripheral.find("geoScanner")
+
 continueOperation = true
 while continueOperation do
 	term.clear()
 	print("[a] analyze chunk")
+	print("[x] change target tag")
 	print("[q] quit")
 	local event, key = os.pullEvent("key")
 
 	if key == "a" then
-		term.clear()
-		print("enter tag to filter for")
-		tag = read()
-		term.clear()
 		analyze()
+	elseif key == "x" then
+		term.clear()
+		print("change target tag "..FILTER_TAG.." to:")
+		FILTER_TAG = read()
 	elseif key == "q" then
 		continueOperation = false
 	end
