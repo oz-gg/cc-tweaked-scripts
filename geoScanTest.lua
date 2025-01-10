@@ -1,4 +1,4 @@
-scanenr = peripheral.find("geoScanner")
+scanner = peripheral.find("geoScanner")
 result = scanner.scan(5)
 
 for i, v in ipairs(result) do
