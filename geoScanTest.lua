@@ -22,8 +22,8 @@ function analyze(tag)
 			print(i..": "..v)
 		end
 	end
-	print("press any key to go back...")
-	os.pullEvent("key")
+	print("press enter to go back...")
+	read()
 end
 
 continueOperation = true
