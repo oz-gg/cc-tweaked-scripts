@@ -1,6 +1,6 @@
 scanner = peripheral.find("geoScanner")
 result = scanner.scan(5)
 
-for i, v in ipairs(result) do
-  print(v)
+for i = 1, #result do
+  print(result[i])
 end
