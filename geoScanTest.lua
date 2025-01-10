@@ -37,6 +37,7 @@ while continueOperation do
 		term.clear()
 		print("enter tag to filter for")
 		tag = read()
+		term.clear()
 		analyze()
 	elseif key == "q" then
 		continueOperation = false
