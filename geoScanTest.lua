@@ -12,15 +12,7 @@ function analyze(tag)
 	term.setCursorPos(1, 1)
 	result, err = scanner.chunkAnalyze()
 	if result ~= nil then
-		ores = {}
 		for i, v in pairs(result) do
-			if stringInTable(tag, v.tags) then
-				if not ores[v.name] then ores[v.name] = 1 else
-				ores[v.name] = ores[v.name] + 1 end
-			end
-		end
-
-		for i, v in pairs(ores) do
 			print(i..": "..v)
 		end
 	end
