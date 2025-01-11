@@ -53,7 +53,7 @@ function radar()
 
 		local scanResult, err = scanner.scan(SCAN_RADIUS)
 
-		if not data then
+		if not scanResult then
 			paintutils.drawPixel(3, 3, colors.red)
 			term.setCursorPos(3, 3)
 			print("Scan Error: "..err.."\n")
