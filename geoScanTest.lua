@@ -53,7 +53,7 @@ function analyze()
 	result, err = scanner.chunkAnalyze()
 	if result ~= nil then
 		ores = {}
-		for i, v in ipairs(result) do
+		for i, v in pairs(result) do
 			table.insert(ores, i..": "..v)
 		end
 		scrollData(ores, 7)
@@ -144,7 +144,8 @@ continueOperation = true
 while continueOperation do
 	term.clear()
 	term.setCursorPos(1, 1)
-	print("currently looking for:\n"..FILTER_TAG.."\n")
+	print("currently looking for:\n"..FILTER_TAG)
+ print("at a distance of: "..SCAN_RADIUS.."\n")
 	print("[a] analyze chunk")
 	print("[r] radar")
 	print("[s] change scan radius")
