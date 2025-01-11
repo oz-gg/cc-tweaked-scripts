@@ -71,7 +71,7 @@ function radar()
 							local pixelColor = colors.cyan
 							if data.y > 0 then
 								pixelColor = colors.lime
-							else
+							elseif data.y < 0 then
 								pixelColor = colors.orange
 							end
 
