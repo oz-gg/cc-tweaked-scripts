@@ -52,7 +52,10 @@ function analyze()
 	term.setCursorPos(1, 1)
 	result, err = scanner.chunkAnalyze()
 	if result ~= nil then
-		scrollData(result, 7)
+		ores = {}
+		for i, v in ipairs(result) do
+			table.insert(ores, i..": "..v)
+		end
 	end
 end
 
