@@ -56,6 +56,7 @@ function analyze()
 		for i, v in ipairs(result) do
 			table.insert(ores, i..": "..v)
 		end
+		scrollData(ores, 7)
 	end
 end
 
