@@ -9,6 +9,7 @@ end
 
 function analyze(tag)
 	term.clear()
+	term.setCursorPos(1, 1)
 	result, err = scanner.analyzeChunk()
 	if result ~= nil then
 		ores = {}
@@ -32,15 +33,18 @@ scanner = peripheral.find("geoScanner")
 continueOperation = true
 while continueOperation do
 	term.clear()
+	term.setCursorPos(1, 1)
 	print("[a] analyze chunk")
 	print("[x] change target tag")
 	print("[q] quit")
+
 	local event, key = os.pullEvent("key")
 
 	if key == "a" then
 		analyze()
 	elseif key == "x" then
 		term.clear()
+		term.setCursorPos(1, 1)
 		print("change target tag "..FILTER_TAG.." to:")
 		FILTER_TAG = read()
 	elseif key == "q" then
