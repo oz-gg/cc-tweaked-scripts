@@ -8,17 +8,52 @@ function stringInTable(v, t)
 	return false
 end
 
+function scrollData(data, pageSize, page)
+    term.clear()
+    term.setCursorPos(1, 1)
+
+    page = page or 1
+
+    local pageCount = math.ceil(#data / pageSize)
+
+    local startIndex = (page - 1) * pageSize + 1
+    local endIndex = math.min(startIndex + pageSize - 1, #data)
+
+    print("Page: " .. page .. " of " .. pageCount)
+    print("[a] < | [s] exit | [d] >\n")
+
+    for i = startIndex, endIndex do
+        print(data[i])
+    end
+
+    local badKey = true
+    while badKey do
+        local event, key = os.pullEvent("key")
+
+        if key == keys.a then
+            badKey = false
+            if page > 1 then
+                scrollData(data, pageSize, page - 1)
+            end
+        elseif key == keys.d then
+            badKey = false
+            if page < pageCount then
+                scrollData(data, pageSize, page + 1)
+            end
+        elseif key == keys.s then
+            badKey = false
+            return
+        end
+    end
+end
+
 function analyze()
 	term.clear()
 	term.setCursorPos(1, 1)
 	result, err = scanner.chunkAnalyze()
 	if result ~= nil then
-		for i, v in pairs(result) do
-			print(i..": "..v)
-		end
+		scrollData(result)
 	end
-	print("press enter to go back...")
-	read()
 end
 
 function radar()
