@@ -40,14 +40,14 @@ while continueOperation do
 
 	local event, key = os.pullEvent("key")
 
-	if key == "a" then
+	if key == keys.a then
 		analyze()
-	elseif key == "x" then
+	elseif key == keys.x then
 		term.clear()
 		term.setCursorPos(1, 1)
 		print("change target tag "..FILTER_TAG.." to:")
 		FILTER_TAG = read()
-	elseif key == "q" then
+	elseif key == keys.q then
 		continueOperation = false
 	end
 end
