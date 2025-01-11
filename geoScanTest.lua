@@ -52,7 +52,7 @@ function analyze()
 	term.setCursorPos(1, 1)
 	result, err = scanner.chunkAnalyze()
 	if result ~= nil then
-		scrollData(result)
+		scrollData(result, 7)
 	end
 end
 
