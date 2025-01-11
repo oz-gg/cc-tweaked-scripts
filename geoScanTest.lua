@@ -121,8 +121,8 @@ while continueOperation do
 	elseif key == keys.s then
 		term.clear()
 		term.setCursorPos(1, 1)
-		print("change scan radius ("..SCAN_RADIUS..") to (1-9) :")
-		SCAN_RADIUS = math.min(math.max(tonumber(read()), 1), 9) or 8
+		print("change scan radius ("..SCAN_RADIUS..") to (1-20) :")
+		SCAN_RADIUS = math.min(math.max(tonumber(read()), 1), 20) or 8
 	elseif key == keys.x then
 		term.clear()
 		term.setCursorPos(1, 1)
