@@ -33,19 +33,19 @@ function radar()
 		term.clear()
 
 		--print north
-		term.setCursor(sx, 2)
+		term.setCursorPos(sx, 2)
 		print("N")
 
 		--print south
-		term.setCursor(sx, h)
+		term.setCursorPos(sx, h)
 		print("S")
 
 		--print west
-		term.setCursor(1, sy)
+		term.setCursorPos(1, sy)
 		print("W")
 
 		--print east
-		term.setCursor(w, sy)
+		term.setCursorPos(w, sy)
 		print("E")
 
 		--center
@@ -121,7 +121,7 @@ while continueOperation do
 		term.clear()
 		term.setCursorPos(1, 1)
 		print("change scan radius ("..SCAN_RADIUS..") to (1-9) :")
-		SCAN_RADIUS = math.clamp(1, 9, int(read())) or 8
+		SCAN_RADIUS = math.min(math.max(tonumber(read()), 1), 9) or 8
 	elseif key == keys.x then
 		term.clear()
 		term.setCursorPos(1, 1)
