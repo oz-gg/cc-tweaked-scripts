@@ -1,5 +1,5 @@
 FILTER_TAG = "forge:ores"
-SCAN_RADIUS = 8
+SCAN_RADIUS = 9
 
 function stringInTable(v, t)
 	for i, x in ipairs(t) do
@@ -161,7 +161,7 @@ while continueOperation do
 		term.clear()
 		term.setCursorPos(1, 1)
 		print("change scan radius ("..SCAN_RADIUS..") to (1-9) :")
-		SCAN_RADIUS = math.min(math.max(tonumber(read()), 1), 9) or 8
+		SCAN_RADIUS = math.min(math.max(tonumber(read()), 1), 9) or 9
 	elseif key == keys.x then
 		term.clear()
 		term.setCursorPos(1, 1)
