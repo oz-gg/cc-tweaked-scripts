@@ -10,7 +10,7 @@ end
 function analyze(tag)
 	term.clear()
 	term.setCursorPos(1, 1)
-	result, err = scanner.analyzeChunk()
+	result, err = scanner.chunkAnalyze()
 	if result ~= nil then
 		ores = {}
 		for i, v in pairs(result) do
