@@ -95,6 +95,7 @@ function radar()
 			end
 		end
 		elevationStep = not elevationStep
+		os.sleep(2)
 	end
 end
 
